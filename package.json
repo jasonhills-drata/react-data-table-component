@@ -18,7 +18,17 @@
     "react-data-table",
     "react-data-table-component"
   ],
-  "repository": "https://github.com/jbetancur/react-data-table-component",
+
+  "publishable": true,
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/drata/react-data-table-component"
+  },
+  "publishConfig": {
+      "registry": "https://npm.pkg.github.com",
+      "access": "restricted",
+      "token": "${NPM_TOKEN}"
+  },
   "author": "jbetancur",
   "license": "Apache-2.0",
   "prepublish": "tsc",
@@ -40,6 +50,7 @@
     "deploy-storybook": "gh-pages -d storybook-static",
     "prebuild": "yarn install && rimraf dist",
     "patch": "./bin/npm-patch",
+    "prerelease": "./bin/npm-prerelease",
     "build:prod": "yarn run prebuild && webpack --env production"
   },
   "devDependencies": {
