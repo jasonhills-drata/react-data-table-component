@@ -22,7 +22,7 @@
 		"declaration": true,
 		"jsx": "react",
 		"moduleResolution": "node",
-		"lib": ["es2018", "dom"],
+		"lib": ["es2018", "dom", "esnext.asynciterable"],
 	},
 	"include": [
 		"./src"],
