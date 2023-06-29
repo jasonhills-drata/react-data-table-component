@@ -117,11 +117,8 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "ts-jest": "^27.1.2",
-    "ts-loader": "8",
-    "typescript": "^4.6.4",
-    "webpack": "^4.44.0",
-    "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^3.3.12"
+    "ts-loader": "^9.4.4",
+    "typescript": "^4.6.4"
   },
   "dependencies": {
     "deepmerge": "^4.2.2"
