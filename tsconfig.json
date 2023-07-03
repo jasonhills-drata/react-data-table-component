@@ -5,7 +5,7 @@
 		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
-		"noEmit": false,
+		"noEmit": true,
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,
 		"removeComments": true,
@@ -24,8 +24,7 @@
 		"moduleResolution": "node",
 		"lib": ["es2018", "dom"],
 	},
-	"include": [
-		"./src"],
+	"include": ["./src"],
 	"exclude": [
 		"node_modules",
 		"dist",
