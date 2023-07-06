@@ -13,23 +13,18 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"sourceMap": true,
-		"baseUrl": "src",
+		"baseUrl": "./",
+		"outDir": "./dist",
+		// Use ES5 to ensure compatibility with web.
+		// Otherwise you can use ES6.
+		"target": "ES5",
+		"module": "esnext",
+		"declaration": true,
 		"jsx": "react",
 		"moduleResolution": "node",
-		"outDir": "dist",
-		"target": "es6",
-		"module": "esnext",
-		"lib": [
-			"es6",
-			"es7",
-			"dom"
-		],
-		"declaration": true
+		"lib": ["es2018", "dom"],
 	},
-	"include": [
-		"src/**/*",
-		"stories/**/*"
-	],
+	"include": ["./src"],
 	"exclude": [
 		"node_modules",
 		"dist",

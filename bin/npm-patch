@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# this will bump the npm patch version
+# it commits the code to the current working branch, but does not push to remote
+
+# Usage: ./npm-patch [commit_message]
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+CWD=$(pwd)
+DEFAULT_COMMIT_MSG="patch bump"
+
+COMMIT_MSG=${@:-$DEFAULT_COMMIT_MSG}
+
+cd "${DIR}/../"
+
+function checkOutput() {
+  if [ "$?" != "0" ]; then
+    echo "Something went wrong... Exiting"
+    cd "$CWD"
+    exit 1
+  fi
+}
+
+echo "Building production bundle..."
+yarn install
+checkOutput $?
+
+yarn build:prod
+checkOutput $?
+
+echo "Staging all files for git..."
+git add .
+checkOutput $?
+
+echo "Committing with message: \"${COMMIT_MSG}\"..."
+git commit -m "$COMMIT_MSG"
+checkOutput $?
+
+echo "Creating npm patch version..."
+npm version patch
+checkOutput $?
+
+echo "Publishing npm package..."
+npm publish
+checkOutput $?
+
+cd "$CWD"
